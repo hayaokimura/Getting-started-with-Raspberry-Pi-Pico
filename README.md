@@ -3,6 +3,9 @@
 [Tutorial PDF](pdf/getting-started-with-pico.pdf)
 https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf
 
+## このリポジトリは何
+hachi が Raspberry Pi Pico の C プログラミングに入門するためにチュートリアルをやってみるリポジトリ
+
 ## 開発環境セットアップ
 できるだけ手元の環境変えたくないので docker で開発できるならしたい。
 ちょうどよく VSCode Dev Container を構築している人がいたので試してみる
