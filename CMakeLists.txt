@@ -21,6 +21,7 @@ pico_sdk_init()
 
 add_subdirectory(blink)
 add_subdirectory(hello_world)
+add_subdirectory(picow_ntp_client)
 
 # Add the standard library to the build
 # target_link_libraries(TestProject
