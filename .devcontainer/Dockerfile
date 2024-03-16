@@ -3,7 +3,7 @@
 # [Choice] Debian / Ubuntu version: debian-10, debian-9, ubuntu-20.04, ubuntu-18.04
 ARG VARIANT="ubuntu-22.04"
 
-FROM mcr.microsoft.com/vscode/devcontainers/cpp:0-$VARIANT
+FROM --platform=linux/x86_64 mcr.microsoft.com/vscode/devcontainers/cpp:0-$VARIANT
 
 ENV TOOLCHAINURL="https://developer.arm.com/-/media/Files/downloads/gnu/11.3.rel1/binrel"
 ENV TOOLCHAINARCHIVE="arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi.tar.xz"
@@ -12,7 +12,7 @@ ENV TOOLCHAINDIR="arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi"
 # [Optional] Uncomment this section to install additional packages.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends cmake build-essential wget ca-certificates \
-    gdb-multiarch automake autoconf libtool libftdi-dev libusb-1.0-0-dev pkg-config clang-format libhidapi-dev
+    gdb-multiarch automake autoconf libtool libftdi-dev libusb-1.0-0-dev pkg-config clang-format libhidapi-dev libc6-dev
 WORKDIR /apps
 
 RUN echo "$TOOLCHAINURL/$TOOLCHAINARCHIVE"

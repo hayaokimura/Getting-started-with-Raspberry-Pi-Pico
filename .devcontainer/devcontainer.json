@@ -9,8 +9,9 @@
     "--cap-add=SYS_PTRACE",
     "--security-opt",
     "seccomp=unconfined",
-    "--device=/dev/bus/usb"
+    "--device=/dev/bus/usb",
     // "--device=/dev/ttyACM0",
+    "--platform=linux/amd64",
   ],
   "customizations": {
     "vscode": {
