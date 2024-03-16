@@ -19,28 +19,19 @@ set(PICO_CXX_ENABLE_EXCEPTIONS 1)
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
-# Add executable. Default name is the project name, version 0.1
-
-add_executable(TestProject hello_world.c )
-
-pico_set_program_name(TestProject "TestProject")
-pico_set_program_version(TestProject "0.1")
-
-pico_enable_stdio_uart(TestProject 0)
-pico_enable_stdio_usb(TestProject 1)
+add_subdirectory(blink)
+add_subdirectory(hello_world)
 
 # Add the standard library to the build
-target_link_libraries(TestProject
-        pico_stdlib
-        pico_cyw43_arch_none     # we need Wifi to access the GPIO, but we don't need anything else
-)
+# target_link_libraries(TestProject
+#         pico_stdlib
+#         pico_cyw43_arch_none     # we need Wifi to access the GPIO, but we don't need anything else
+# )
 
 # Add any user requested libraries
-target_link_libraries(TestProject
-        hardware_spi
-        hardware_i2c
-        hardware_dma
-        hardware_clocks
-        )
-
-pico_add_extra_outputs(TestProject)
+# target_link_libraries(TestProject
+#         hardware_spi
+#         hardware_i2c
+#         hardware_dma
+#         hardware_clocks
+#         )

@@ -81,6 +81,13 @@ https://github.com/raspberrypi/pico-examples/blob/eca13acf57916a0bd5961028314006
 動いた！！
 https://x.com/hachiblog/status/1768840858324148635?s=20
 
+```sh
+$ cd build
+$ cmake .. -DPICO_BOARD=pico_w 
+$ make -j4
+
+```
+
 ## image のサイズを低減させる
 image size が 10G もあるのでもう少しコンパクトにしたい
 
@@ -145,5 +152,13 @@ $ screen -list
 # terminate する
 $ screen -X -S <pid> quit
 ```
+## 2つのバイナリをどっちもそれぞれのディレクトリでビルドできるようにする
+sample がそういう構成になってるので多分できるはず。CMake ってどうやって実行するんだろう。
+
+add_subdirectory command をつかうっぽい。
+
+
+## [上記のブログ](https://decafish.blog.ss-blog.jp/2021-05-12)のチップ温度表示プログラムを試してみる
+
 
 
