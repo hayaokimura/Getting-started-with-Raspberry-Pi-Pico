@@ -21,13 +21,13 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(TestProject blink.c )
+add_executable(TestProject hello_world.c )
 
 pico_set_program_name(TestProject "TestProject")
 pico_set_program_version(TestProject "0.1")
 
-pico_enable_stdio_uart(TestProject 1)
-pico_enable_stdio_usb(TestProject 0)
+pico_enable_stdio_uart(TestProject 0)
+pico_enable_stdio_usb(TestProject 1)
 
 # Add the standard library to the build
 target_link_libraries(TestProject
